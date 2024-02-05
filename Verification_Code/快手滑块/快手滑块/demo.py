@@ -160,6 +160,7 @@ class Kuaishou():
         }
 
         json_data = {'verifyParam': data_crack}
+        json_data['verifyParam'] = json_data['verifyParam'].decode('utf-8')
 
         response = self.session.post('https://captcha.zt.kuaishou.com/rest/zt/captcha/sliding/kSecretApiVerify',headers=headers,json=json_data)
         print(response.json())
